@@ -111,9 +111,7 @@ public class JdbcMemberRepository implements MemberRepository {
             close(conn, pstmt, rs);
         }
     }
-    private Connection getConnection() {
-        return DataSourceUtils.getConnection(dataSource);
-    }
+
     private void close(Connection conn, PreparedStatement pstmt, ResultSet rs) {
         try {
             if (rs != null) {
@@ -136,6 +134,9 @@ public class JdbcMemberRepository implements MemberRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    private Connection getConnection() {
+        return DataSourceUtils.getConnection(dataSource);
     }
     private void close(Connection conn) throws SQLException {
         DataSourceUtils.releaseConnection(conn, dataSource);

@@ -1,15 +1,74 @@
+
 <!DOCTYPE HTML>
 <html xmlns:th = "http://www.thymeleaf.org">
+
+<header>
+    <h2>Spring_study</h2>
+    <nav>
+        <span><a href= "members/new" >회원가입</a></span>
+        <span><a  href= "members">회원목록</a></span>
+    </nav>
+</header>
+
+
 <body>
     <div class = "container">
-        <div>
-            <h1>홈화면 입니다람쥐</h1>
-            <p> 회원 기능</p>
-            <p>
-                <a href="members/new"> 회원 가입 </a>
-                <a href="members"> 회원 목록 </a>
-            </p>
-        </div>
+
     </div>
 </body>
 </html>
+
+
+<style>
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 75px;
+        padding: 1rem;
+        color: #275efe;
+        background: white;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: opacity 0.3s ease;
+        z-index: 1000;
+    }
+
+    header h2 a {
+        font-size: 2rem; /* 기본 폰트 크기 설정 */
+
+    }
+
+    header nav span a {
+        text-decoration: none;
+        color: #275efe;
+        font-size: 1.2rem; /* 기본 링크 폰트 크기 설정 */
+        margin: 0 1rem; /* 메뉴 간의 간격 */
+    }
+
+    @media (max-width: 768px) {
+        header h2 {
+            font-size: 1.5rem; /* 작은 화면에서는 제목 크기 축소 */
+        }
+
+        header nav span a {
+            font-size: 1rem; /* 작은 화면에서는 링크 크기 축소 */
+            margin: 0 0.5rem; /* 메뉴 간의 간격 줄이기 */
+        }
+    }
+
+    @media (min-width: 1024px) {
+        header h2 {
+            font-size: 2.5rem; /* 큰 화면에서는 제목 크기 확대 */
+        }
+
+        header nav span a {
+            font-size: 1.5rem; /* 큰 화면에서는 링크 크기 확대 */
+            margin: 0 1.5rem; /* 메뉴 간의 간격 늘리기 */
+        }
+    }
+
+</style>
